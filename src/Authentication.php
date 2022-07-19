@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Stellion\Emag;
+namespace Pricemind\Emag;
 
 class Authentication
 {

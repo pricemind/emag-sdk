@@ -19,12 +19,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Stellion\\Emag\\": "src/"
+            "Pricemind\\Emag\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Stellion\\Test\\Emag\\": "tests/"
+            "Pricemind\\Test\\Emag\\": "tests/"
         }
     }
 }

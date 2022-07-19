@@ -1,21 +1,21 @@
 <?php
 declare(strict_types=1);
 
-namespace Stellion\Emag;
+namespace Pricemind\Emag;
 
+use Pricemind\Emag\Exceptions\ResponseError;
 use Psr\Http\Message\ResponseInterface;
-use Stellion\Emag\Exceptions\ResponseError;
 
 class Client
 {
 
     /**
-     * @var \Stellion\Emag\Authentication
+     * @var \Pricemind\Emag\Authentication
      */
     private Authentication $authentication;
     private \GuzzleHttp\Client $httpClient;
     /**
-     * @var \Stellion\Emag\Countries
+     * @var \Pricemind\Emag\Countries
      */
     private Countries $country;
 
@@ -28,7 +28,7 @@ class Client
 
     /**
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Stellion\Emag\Exceptions\ResponseError
+     * @throws \Pricemind\Emag\Exceptions\ResponseError
      */
     public function ping()
     {

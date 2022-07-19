@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Stellion\Emag\Exceptions;
+namespace Pricemind\Emag\Exceptions;
 
 class ResponseError extends EmagException
 {
