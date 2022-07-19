@@ -1,12 +1,12 @@
 {
-    "name": "stellion-company/emag-sdk",
+    "name": "pricemind/emag-sdk",
     "description": "Emag PHP SDK",
     "type": "library",
     "license": "MIT",
     "authors": [
         {
             "name": "Ludmil Simeonov",
-            "email": "youseeucs@gmail.com"
+            "email": "lsimeonov@stellion.net"
         }
     ],
     "require": {
