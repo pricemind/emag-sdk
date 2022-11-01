@@ -66,7 +66,8 @@ class Client
         return $this->processResponse($response);
     }
 
-    public function bulkSavPeroductOffer(){
+    public function bulkSavPeroductOffer()
+    {
         // todo
     }
 
@@ -87,7 +88,9 @@ class Client
 
         // Check for errors
         if ($content['isError'] !== false) {
-            throw new ResponseError($content['messages'] ?? 'Unknown error');
+
+
+            throw new ResponseError(implode("\n", $content['messages']) ?? 'Unknown error');
         }
 
         return $content;
