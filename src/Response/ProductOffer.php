@@ -54,7 +54,7 @@ class ProductOffer
 
     private string $brandName;
 
-    private int $buyButtonRank;
+    private ?int $buyButtonRank;
 
     private int $categoryId;
 
@@ -98,13 +98,13 @@ class ProductOffer
 
     private int $estimatedStock;
 
-    private float $minSalePrice;
+    private ?float $minSalePrice;
 
-    private float $maxSalePrice;
+    private ?float $maxSalePrice;
 
     private array $offerDetails;
 
-    private array $contentDetails;
+    private ?array $contentDetails;
 
     private array $offerProperties;
 
@@ -126,9 +126,9 @@ class ProductOffer
 
     private bool $ownership;
 
-    private float $bestOfferSalePrice;
+    private ?float $bestOfferSalePrice;
 
-    private float $bestOfferRecommendedPrice;
+    private ?float $bestOfferRecommendedPrice;
 
     private int $numberOfOffers;
 
@@ -143,7 +143,7 @@ class ProductOffer
         $product = new self();
         $product->setPartNumberKey($params['part_number_key']);
         $product->setBrandName($params['brand_name']);
-        $product->setBuyButtonRank($params['buy_button_rank']);
+        $product->setBuyButtonRank($params['buy_button_rank']??null);
         $product->setCategoryId($params['category_id']);
         $product->setId($params['id']);
         $product->setBrand($params['brand']);
@@ -220,17 +220,17 @@ class ProductOffer
     }
 
     /**
-     * @return int
+     * @return int|null
      */
-    public function getBuyButtonRank(): int
+    public function getBuyButtonRank(): ?int
     {
         return $this->buyButtonRank;
     }
 
     /**
-     * @param int $buyButtonRank
+     * @param int|null $buyButtonRank
      */
-    public function setBuyButtonRank(int $buyButtonRank): void
+    public function setBuyButtonRank(?int $buyButtonRank): void
     {
         $this->buyButtonRank = $buyButtonRank;
     }
@@ -572,33 +572,33 @@ class ProductOffer
     }
 
     /**
-     * @return float
+     * @return float|null
      */
-    public function getMinSalePrice(): float
+    public function getMinSalePrice(): ?float
     {
         return $this->minSalePrice;
     }
 
     /**
-     * @param float $minSalePrice
+     * @param float|null $minSalePrice
      */
-    public function setMinSalePrice(float $minSalePrice): void
+    public function setMinSalePrice(?float $minSalePrice): void
     {
         $this->minSalePrice = $minSalePrice;
     }
 
     /**
-     * @return float
+     * @return float|null
      */
-    public function getMaxSalePrice(): float
+    public function getMaxSalePrice(): ?float
     {
         return $this->maxSalePrice;
     }
 
     /**
-     * @param float $maxSalePrice
+     * @param float|null $maxSalePrice
      */
-    public function setMaxSalePrice(float $maxSalePrice): void
+    public function setMaxSalePrice(?float $maxSalePrice): void
     {
         $this->maxSalePrice = $maxSalePrice;
     }
@@ -620,20 +620,21 @@ class ProductOffer
     }
 
     /**
-     * @return array
+     * @return array|null
      */
-    public function getContentDetails(): array
+    public function getContentDetails(): ?array
     {
         return $this->contentDetails;
     }
 
     /**
-     * @param array $contentDetails
+     * @param array|null $contentDetails
      */
-    public function setContentDetails(array $contentDetails): void
+    public function setContentDetails(?array $contentDetails): void
     {
         $this->contentDetails = $contentDetails;
     }
+
 
     /**
      * @return array
@@ -796,33 +797,33 @@ class ProductOffer
     }
 
     /**
-     * @return float
+     * @return float|null
      */
-    public function getBestOfferSalePrice(): float
+    public function getBestOfferSalePrice(): ?float
     {
         return $this->bestOfferSalePrice;
     }
 
     /**
-     * @param float $bestOfferSalePrice
+     * @param float|null $bestOfferSalePrice
      */
-    public function setBestOfferSalePrice(float $bestOfferSalePrice): void
+    public function setBestOfferSalePrice(?float $bestOfferSalePrice): void
     {
         $this->bestOfferSalePrice = $bestOfferSalePrice;
     }
 
     /**
-     * @return float
+     * @return float|null
      */
-    public function getBestOfferRecommendedPrice(): float
+    public function getBestOfferRecommendedPrice(): ?float
     {
         return $this->bestOfferRecommendedPrice;
     }
 
     /**
-     * @param float $bestOfferRecommendedPrice
+     * @param float|null $bestOfferRecommendedPrice
      */
-    public function setBestOfferRecommendedPrice(float $bestOfferRecommendedPrice): void
+    public function setBestOfferRecommendedPrice(?float $bestOfferRecommendedPrice): void
     {
         $this->bestOfferRecommendedPrice = $bestOfferRecommendedPrice;
     }
