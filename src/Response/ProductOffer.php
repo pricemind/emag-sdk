@@ -56,7 +56,7 @@ class ProductOffer
 
     private ?int $buyButtonRank;
 
-    private int $categoryId;
+    private ?int $categoryId;
 
     private int $id;
 
@@ -143,7 +143,7 @@ class ProductOffer
         $product = new self();
         $product->setPartNumberKey($params['part_number_key']);
         $product->setBrandName($params['brand_name']);
-        $product->setBuyButtonRank($params['buy_button_rank']??null);
+        $product->setBuyButtonRank($params['buy_button_rank'] ?? null);
         $product->setCategoryId($params['category_id']);
         $product->setId($params['id']);
         $product->setBrand($params['brand']);
@@ -236,17 +236,17 @@ class ProductOffer
     }
 
     /**
-     * @return int
+     * @return int|null
      */
-    public function getCategoryId(): int
+    public function getCategoryId(): ?int
     {
-        return $this->categoryId;
+        return $this->categoryId ?? null;
     }
 
     /**
-     * @param int $categoryId
+     * @param int|null $categoryId
      */
-    public function setCategoryId(int $categoryId): void
+    public function setCategoryId(?int $categoryId): void
     {
         $this->categoryId = $categoryId;
     }
