@@ -52,7 +52,7 @@ class ProductOffer
      */
     private string $partNumberKey;
 
-    private string $brandName;
+    private ?string $brandName;
 
     private ?int $buyButtonRank;
 
@@ -60,7 +60,7 @@ class ProductOffer
 
     private int $id;
 
-    private string $brand;
+    private ?string $brand;
 
     private ?int $vendorCategoryId;
 
@@ -132,7 +132,7 @@ class ProductOffer
 
     private int $numberOfOffers;
 
-    private string $rrpGuidelines;
+    private ?string $rrpGuidelines;
 
     /**
      * @param array $params
@@ -142,31 +142,31 @@ class ProductOffer
     {
         $product = new self();
         $product->setPartNumberKey($params['part_number_key']);
-        $product->setBrandName($params['brand_name']);
+        $product->setBrandName($params['brand_name'] ?? null);
         $product->setBuyButtonRank($params['buy_button_rank'] ?? null);
-        $product->setCategoryId($params['category_id']);
-        $product->setId($params['id']);
-        $product->setBrand($params['brand']);
+        $product->setCategoryId($params['category_id'] ?? null);
+        $product->setId((int)$params['id']);
+        $product->setBrand($params['brand'] ?? null);
         $product->setVendorCategoryId($params['vendor_category_id']);
         $product->setName($params['name']);
-        $product->setSalePrice($params['sale_price']);
+        $product->setSalePrice((float)$params['sale_price']);
         $product->setCurrency($params['currency']);
         $product->setDescription($params['description']);
         $product->setUrl($params['url']);
-        $product->setWarranty($params['warranty']);
-        $product->setGeneralStock($params['general_stock']);
+        $product->setWarranty((int)$params['warranty']);
+        $product->setGeneralStock((int)$params['general_stock']);
         $product->setWeight($params['weight']);
-        $product->setStatus($params['status']);
-        $product->setRecommendedPrice($params['recommended_price']);
+        $product->setStatus((int)$params['status']);
+        $product->setRecommendedPrice((float)$params['recommended_price']);
         $product->setImages($params['images']);
         $product->setCharacteristics($params['characteristics']);
         $product->setAttachments($params['attachments']);
-        $product->setVatId($params['vat_id']);
+        $product->setVatId((int)$params['vat_id']);
         $product->setFamily($params['family']);
         $product->setStartDate($params['start_date']);
-        $product->setEstimatedStock($params['estimated_stock']);
-        $product->setMinSalePrice($params['min_sale_price']);
-        $product->setMaxSalePrice($params['max_sale_price']);
+        $product->setEstimatedStock((int)$params['estimated_stock']);
+        $product->setMinSalePrice((float)$params['min_sale_price']);
+        $product->setMaxSalePrice((float)$params['max_sale_price']);
         $product->setOfferDetails($params['offer_details']);
         $product->setContentDetails($params['content_details']);
         $product->setOfferProperties($params['offer_properties']);
@@ -178,11 +178,11 @@ class ProductOffer
         $product->setCommission($params['commission']);
         $product->setValidationStatus($params['validation_status']);
         $product->setOfferValidationStatus($params['offer_validation_status']);
-        $product->setOwnership($params['ownership']);
-        $product->setBestOfferSalePrice($params['best_offer_sale_price']);
-        $product->setBestOfferRecommendedPrice($params['best_offer_recommended_price']);
-        $product->setNumberOfOffers($params['number_of_offers']);
-        $product->setRrpGuidelines($params['rrp_guidelines']);
+        $product->setOwnership((bool)$params['ownership']);
+        $product->setBestOfferSalePrice((float)$params['best_offer_sale_price']);
+        $product->setBestOfferRecommendedPrice((float)$params['best_offer_recommended_price']);
+        $product->setNumberOfOffers((int)$params['number_of_offers']);
+        $product->setRrpGuidelines($params['rrp_guidelines']??null);
 
         return $product;
     }
@@ -204,17 +204,17 @@ class ProductOffer
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getBrandName(): string
+    public function getBrandName(): ?string
     {
-        return $this->brandName;
+        return $this->brandName ?? null;
     }
 
     /**
-     * @param string $brandName
+     * @param string|null $brandName
      */
-    public function setBrandName(string $brandName): void
+    public function setBrandName(?string $brandName): void
     {
         $this->brandName = $brandName;
     }
@@ -268,17 +268,17 @@ class ProductOffer
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getBrand(): string
+    public function getBrand(): ?string
     {
         return $this->brand;
     }
 
     /**
-     * @param string $brand
+     * @param string|null $brand
      */
-    public function setBrand(string $brand): void
+    public function setBrand(?string $brand): void
     {
         $this->brand = $brand;
     }
@@ -845,17 +845,17 @@ class ProductOffer
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getRrpGuidelines(): string
+    public function getRrpGuidelines(): ?string
     {
-        return $this->rrpGuidelines;
+        return $this->rrpGuidelines??null;
     }
 
     /**
-     * @param string $rrpGuidelines
+     * @param string|null $rrpGuidelines
      */
-    public function setRrpGuidelines(string $rrpGuidelines): void
+    public function setRrpGuidelines(?string $rrpGuidelines): void
     {
         $this->rrpGuidelines = $rrpGuidelines;
     }
